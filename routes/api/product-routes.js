@@ -70,12 +70,6 @@ router.post("/", (req, res) => {
     tagIds: req.body.tagIds,
   })
 
-    .then((product) => res.json(product))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    })
-
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
@@ -116,7 +110,7 @@ router.put("/:id", (req, res) => {
       const newProductTags = req.body.tagIds
         .filter((tag_id) => !productTagIds.includes(tag_id))
         .map((tag_id) => {
-          return { 
+          return {
             product_id: req.params.id,
             tag_id,
           };
@@ -143,20 +137,20 @@ router.delete("/:id", (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-  .then(delProduct => {
-    if(!delProduct) {
-      res.status(400).json({ message: "There is no tag for this Id"});
-      return;
-    }
-    res.json(delProduct);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
+    .then((delProduct) => {
+      if (!delProduct) {
+        res.status(400).json({ message: "There is no tag for this Id" });
+        return;
+      }
+      res.json(delProduct);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
