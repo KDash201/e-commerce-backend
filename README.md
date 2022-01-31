@@ -1,7 +1,7 @@
 ## E-commerce Back End
 
 ## Description
-This app allows behaves as the back end to an E-Commmerce site.  It allows for a manager to keep track of there inventory by categories.
+This app behaves as the back end to an E-Commmerce site.  It allows for a manager to keep track of there inventory by categories.
 
 ## Table of Contents
 
