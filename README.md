@@ -26,8 +26,7 @@ Clone git@github.com:KDash201/e-commerce-backend.git and then run "npm i" on you
 ![picture of auto readme app](images/readMe-image.png)
 
 ## Demo
-
-https://watch.screencastify.com/v/t69txLOklS0YFKOhNPJM
+https://watch.screencastify.com/v/bNf2ddsHg3Br2PelX2Zu
 
 ## For Additonal Questons
 
